@@ -1,0 +1,27 @@
+Criar uma chave para usar o Gemini
+1. Vá até https://ai.google.dev/gemini-api/
+2. Clique em get a Gemini API Key
+3. Copie a chave em um lugar seguro
+
+Testas o programa
+1. Abra um terminal e navegue até a pasta aonde estão os arquivos do projeto usando o comando cd
+2. Crie um ambiente virtual python com o seguinte comando:
+   python -m venv env
+3. Ative o ambiente virtual:
+   env\Scripts\activate.bat
+   Você vai notar que aparece (env) no prompt de comando, indicando que o ambiente virtual está ativo.
+4. Instale a biblioteca que acessa a api do gemini
+   pip install -U google-generativeai
+5. Compile o programa C++:
+   g++ main.cpp  PythonAgent.cpp PythonAgent.h -o chatbot.exe
+6. Chame o programa usando o arquivo .bat fornecido
+   run_chatbot.bat   
+
+json usado pelo programa:
+
+[
+  {"role": "system", "content": "Você é um tutor especializado em história. Responda somente a perguntas especificamente desta disciplina. Responda de forma clara, precisa e didática."},
+  {"role": "user", "content": "Pergunta do usuário A"},
+  {"role": "assistant", "content": "Resposta do assistente A"},
+  {"role": "user", "content": "Pergunta do usuário B"}
+]
